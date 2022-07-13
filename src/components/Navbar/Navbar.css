@@ -1,0 +1,36 @@
+.nav {
+    display: flex;
+    flex-flow: nowrap;
+    background: black;
+  }
+
+  .item {
+    display: inline;
+    padding: 15px;
+    margin-right: 20px;
+  }
+
+  .logo{
+    display: inline;
+    padding: 15px;
+    margin-right: 20px;
+  }
+  .item:hover{
+    background-color: white;
+  }
+  .a:hover{
+    color: black;
+  }
+
+.menu {
+    padding: 15px; 
+  }
+
+  .logo.a:hover {
+    text-decoration: none;
+  }
+  .a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}  
