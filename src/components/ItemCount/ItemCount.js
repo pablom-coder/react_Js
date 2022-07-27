@@ -1,7 +1,7 @@
-import './ItemCount.css';
+/* import './ItemCount.css'; */
 import { useState } from 'react'
 
-const ItemCount = ({ initial, stock, onAdd, descripcion }) => {
+const ItemCount = ({ stock, initial, onAdd}) => {
     const [count, setCount] = useState(0)
 
     const decremental = () => {
@@ -18,16 +18,15 @@ const ItemCount = ({ initial, stock, onAdd, descripcion }) => {
 
     return(
         <div className="container">
-            <h3>{descripcion}</h3>
             <div>
                 <div className="count">
                     <button className="count-container__button" onClick={decremental}
-                    disabled={count === initial ? true : null}> - </button>
+                    /* disabled={count === initial ? true : null} */> - </button>
 
                     <h4>{count}</h4>
 
-                    <button className="count-container__button" onClick={incremental} 
-                    disabled={count===stock ? true : null}> + </button>
+                    <button className="count-container__button" onClick={incremental}
+                    /* disabled={count===stock ? true : null} */> + </button>
                 </div>
             </div>
 
