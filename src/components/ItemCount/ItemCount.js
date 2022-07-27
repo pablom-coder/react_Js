@@ -21,12 +21,12 @@ const ItemCount = ({ stock, initial, onAdd}) => {
             <div>
                 <div className="count">
                     <button className="count-container__button" onClick={decremental}
-                    /* disabled={count === initial ? true : null} */> - </button>
+                    disabled={count === initial ? true : null}> - </button>
 
                     <h4>{count}</h4>
 
                     <button className="count-container__button" onClick={incremental}
-                    /* disabled={count===stock ? true : null} */> + </button>
+                    disabled={count===stock ? true : null}> + </button>
                 </div>
             </div>
 

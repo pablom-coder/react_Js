@@ -11,7 +11,7 @@ const Item = ({product}) => {
             <h4>{product.name}</h4>
             <h4>${product.price}</h4>
             <p className="info">{product.description}</p>
-            <ItemCount stock={product.stock} valInicial={0} onAdd={onAdd}/>
+            <ItemCount stock={product.stock} initial={0} onAdd={onAdd}/>
         </div>
     )
 }
