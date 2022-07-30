@@ -1,8 +1,8 @@
 import './ItemListContainer.css';
 /* import './ItemListContainer' */
-import ItemList from '../ItemList/ItemList';
-import { useState,useEffect } from 'react';
-import { getProducts } from '../../asyncMock';
+import ItemList from '../ItemList/ItemList'
+import { useState,useEffect } from 'react'
+import { getProducts } from '../../asyncMock'
 
 const ItemListContainer = (props) => {
     const [products, setProducts]=useState([])
@@ -16,7 +16,7 @@ const ItemListContainer = (props) => {
         }).finally(()=>{
             setLoading(false)
         })
-    },[])
+    }, [])
 
     if(loading){
         return <h2>Cargando producto...</h2>
@@ -35,9 +35,11 @@ const ItemListContainer = (props) => {
     return (
         <div>
             <h1>{props.greeting}</h1>
-            {
+            
+            <div>
                 <ItemList products={products}/>
-            }
+            </div>
+            
         </div>
     )
 };

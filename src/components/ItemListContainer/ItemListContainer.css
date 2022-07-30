@@ -30,12 +30,6 @@
     margin-bottom: 10px;
 }
 
-.info {
-    text-align: center;
-    align-items: center;
-    line-height: 1.2em;
-}
-
 .agregar {
     background-color: rgb(146, 78, 146);
     border: none;

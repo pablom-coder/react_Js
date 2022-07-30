@@ -1,0 +1,35 @@
+.card_detalle {
+    display: flex;
+    flex-direction: row;    
+    border-radius: 10px;
+    border:rgb(101, 38, 55) solid 1.4px;
+    background-color: rgba(255, 255, 255, 0.491);
+    max-width: 800px;
+}
+
+.img_detalle {
+    margin-bottom: 30px;
+    margin-left: 40px;
+    padding: 10px;
+    width: 70%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.texto_detalle {
+    margin-top: 10px;
+    width: 100%;
+    text-align: justify;
+    font-size: 16px;
+    padding: 0px;
+}
+
+.texto_detalle_descripcion {
+    align-items: center;
+    text-align: center;
+}
+
+.itemdetail{
+    display: flex;
+    justify-content: center;
+}
