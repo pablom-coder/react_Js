@@ -1,8 +1,5 @@
-import ItemCount from '../ItemCount/ItemCount';
 
-const onAdd = (quantity) => {
-    alert("Cantidad de productos agregados " + quantity)
-}
+import { Link } from 'react-router-dom';
 
 const Item = ({product}) => {
     return (
@@ -10,7 +7,7 @@ const Item = ({product}) => {
             <img className="img" src={product.img} alt={product.name} />
             <h4>{product.name}</h4>
             <h4>${product.price}</h4>
-            <ItemCount stock={product.stock} initial={0} onAdd={onAdd}/>
+            <Link to={`/detail/${product.id}`} className="button_detalle">Ver Detalle</Link>
         </div>
     )
 }

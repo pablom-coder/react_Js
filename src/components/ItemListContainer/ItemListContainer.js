@@ -1,36 +1,29 @@
 import './ItemListContainer.css';
-/* import './ItemListContainer' */
 import ItemList from '../ItemList/ItemList'
 import { useState,useEffect } from 'react'
-import { getProducts } from '../../asyncMock'
+import { getProducts,getProductByCategory } from '../../asyncMock'
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = (props) => {
     const [products, setProducts]=useState([])
     const [loading, setLoading]=useState(true)
+    const {categoryId} = useParams()
 
     useEffect(()=>{
-        getProducts().then(response =>{
-            setProducts(response)        
+        const asyncFunction= categoryId ? getProductByCategory : getProducts;
+
+        asyncFunction(categoryId).then(response => {
+            setProducts(response)
         }).catch (error =>{
             console.log(error)
         }).finally(()=>{
             setLoading(false)
-        })
-    }, [])
+        })       
+    }, [categoryId])
 
     if(loading){
         return <h2>Cargando producto...</h2>
     }
-
-    /* const onAdd = (qty) => {
-        if(qty>0){
-            alert(`Agregaste ${qty} productos`)
-        }
-        else
-        {
-            alert(`La cantidad debe ser superior a 0`)
-        }
-    } */
 
     return (
         <div>

@@ -1,7 +1,7 @@
 .nav {
     display: flex;
     flex-flow: nowrap;
-    background: black;
+    background: rgb(216, 192, 192);
   }
 
   .item {
