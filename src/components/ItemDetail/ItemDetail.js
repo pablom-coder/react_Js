@@ -1,31 +1,39 @@
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 
-const ItemDetail = ({product}) => {
+const ItemDetail =  ({id, name, img, category, price, description, stock}) => {
 
     const[quantity, setQuantity] = useState(0)
 
-    const handleOnAdd = (quantity) => {
-        alert("Cantidad de productos agregados " + quantity)
-        setQuantity(quantity)
-    }
+    const { addItem, getProductQuantity } = useContext(CartContext)
 
+    const quantityAdded = getProductQuantity(id)
+
+    const handleOnAdd = (quantity) => {
+        console.log('agregue al carrito')
+        console.log(quantity)
+        setQuantity(quantity)
+        addItem({id, name, price, quantity})
+    }
     return (
-        <div key={product.id} className="card_detalle">
+        <div key={id} className="card_detalle">
             <div className="img_detalle">
-                <img className="img_detalle" src={product.img} alt={product.name} />
+                <img className="img_detalle" src={img} alt={name} />
             </div>
             <div className="texto_detalle">
-                <h2>{product.category}</h2>
-                <h3>{product.name}</h3>
-                <h4>$ {product.price}</h4>
+                <h2>{category}</h2>
+                <h3>{name}</h3>
+                <h4>$ {price}</h4>
                 <div className="texto_detalle_descripcion">
-                    {quantity >0 ? <Link to='/cart'>Ir al carrito</Link> : <ItemCount stock={product.stock} initial={0} onAdd={handleOnAdd}/>}
+                    {quantity > 0 
+                        ? <Link to='/cart'>Finalizar compra</Link> 
+                        : <ItemCount stock={stock} initial={quantityAdded} onAdd={handleOnAdd}/>}
                 </div>
                 
-                <p>{product.description}</p>
+                <p>{description}</p>
             </div>
             
         </div>

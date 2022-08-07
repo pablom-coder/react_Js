@@ -4,7 +4,7 @@ import { useState,useEffect } from 'react'
 import { getProducts,getProductByCategory } from '../../asyncMock'
 import { useParams } from 'react-router-dom';
 
-const ItemListContainer = (props) => {
+const ItemListContainer = (greeting) => {
     const [products, setProducts]=useState([])
     const [loading, setLoading]=useState(true)
     const {categoryId} = useParams()
@@ -25,10 +25,13 @@ const ItemListContainer = (props) => {
         return <h2>Cargando producto...</h2>
     }
 
+    if(products.length === 0) {
+        return categoryId ? <h1>No hay productos en esa categoria {categoryId}</h1> : <h1>No hay productos disponibles</h1>
+    }
+
     return (
         <div>
-            <h1>{props.greeting}</h1>
-            
+            {/* <h1>{`${greeting} ${categoryId || ''}`}</h1> */}            
             <div>
                 <ItemList products={products}/>
             </div>
