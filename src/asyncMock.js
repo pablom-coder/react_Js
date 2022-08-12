@@ -21,7 +21,7 @@ const products  = [
         id: '2', 
         name: 'EDT Pacha Ibiza 24/7 Vip Her x 80 ml', 
         price: 1250, 
-        category: 'Belleza', 
+        category: 'Cuidado Personal', 
         img:"images/EDT_Pacha_Ibiza.jpg", 
         stock: 4, 
         description:'Pacha fragancias presenta su universo Ibiza 24/7, perfumes que nos invitan a vivir el espíritu de esta isla al máximo durante todo el día.'
