@@ -5,7 +5,8 @@
     border:rgb(101, 38, 55) solid 1.4px;
     background-color: rgba(255, 255, 255, 0.491);
     max-width: 800px;
-
+    justify-content: center;
+    padding: 50px;
 }
 
 .img_detalle {
