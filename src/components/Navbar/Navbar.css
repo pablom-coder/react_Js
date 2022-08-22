@@ -2,18 +2,21 @@
     display: flex;
     flex-flow: nowrap;
     background: rgb(216, 192, 192);
+    justify-content: space-around;
   }
 
   .item {
     display: inline;
-    padding: 15px;
+    padding: 16px;
     margin-right: 20px;
+    font-weight: bold;
   }
 
   .logo{
     display: inline;
     padding: 15px;
     margin-right: 20px;
+    font-weight: bold;
   }
 
   .img_logo{

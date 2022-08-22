@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 
 const CartWidget =()=> {
 
-    const  { getQuantity } = useContext(CartContext)
+    const  { getQuantity, totalQuantity } = useContext(CartContext)
 
-    const quantity = getQuantity()
+    //const quantity = getQuantity()
 
 
     return(
         <Link to='/cart' className="carrito">
             <img src="/images/cart.svg" alt='cart' className='CarritoImg'/>
-            {quantity}
+            {totalQuantity}
         </Link>
     );
 }

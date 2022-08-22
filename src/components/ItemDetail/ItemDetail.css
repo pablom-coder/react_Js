@@ -4,7 +4,7 @@
     border-radius: 10px;
     border:rgb(101, 38, 55) solid 1.4px;
     background-color: rgba(255, 255, 255, 0.491);
-    max-width: 800px;
+    max-width: 700px;
     justify-content: center;
     padding: 50px;
 }
@@ -16,6 +16,7 @@
     width: 70%;
     object-fit: cover;
     margin-bottom: 10px;
+    height: 300px;
 }
 
 .texto_detalle {
