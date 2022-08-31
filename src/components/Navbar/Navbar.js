@@ -6,7 +6,7 @@ const Nav =()=>{
     return(
         <nav className='nav'>
              <ul className='menu'>
-                <li className='logo'><img src="../images/logo192.png" className="img_logo"></img>
+                <li className='logo'><img src="../images/logo192.png" className="img_logo" alt="logo"></img>
                 F A R M A R E D</li>
                 <li className='item'>
                     <Link to="/">Inicio</Link>

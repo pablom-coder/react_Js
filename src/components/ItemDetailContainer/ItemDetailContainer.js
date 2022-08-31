@@ -1,45 +1,27 @@
 import './ItemDetailContainer.css'
-import { useState, useEffect } from 'react'
-//import { getProduct, getProductById } from '../../asyncMock'
+import { useAsync } from '../../hooks/useAsync'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
-import { getDoc, doc } from 'firebase/firestore'
-import { db} from '../../services/firebase/index'
+import { fetcher } from '../../utils/fetcher'
+import { getProductById  } from '../../services/firebase/firestore'
 
 const ItemDetailContainer = ({ addItem }) => {
-    const [product, setProduct] = useState()
-    const [loading, setLoading] = useState(true)
 
     const { productId } = useParams()
-
-    useEffect(() => {
-
-        getDoc(doc(db, 'products', productId)).then(response =>{
-            const values = response.data()
-
-            const product = { id: response.id, ...values}
-            setProduct(product)
-        }).catch(error => {
-            console.log(error)
-        }).finally(() => {
-            setLoading(false)
-        })
-
-        // getProduct(productId).then(response => {
-        //     setProduct(response)
-        // }).finally(() => {
-        //     setLoading(false)
-        // })
-    }, [productId])
-
-    if(loading) {
+    const { isLoading, data, error } =useAsync(fetcher(getProductById, productId),[productId])
+    
+    if(isLoading) {
         console.log("cargando..")
         return <h1>Filtrando...</h1>
     }
 
+    if(error){
+        return <h1>Hubo un error</h1>
+    }
+
     return(
         <div className='ItemDetailContainer' >
-            <ItemDetail {...product} addItem={addItem}/>
+            <ItemDetail {...data} addItem={addItem}/>
         </div>
     )
 }
